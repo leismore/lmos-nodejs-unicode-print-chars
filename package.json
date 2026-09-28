@@ -1,0 +1,52 @@
+{
+  "name": "@leismore/lmos-nodejs-unicode-print-chars",
+  "version": "1.0.0",
+  "description": "A class represents a string of printable characters in Unicode.",
+  "keywords": [
+    "Unicode",
+    "Printable Characters",
+    "LMOS for Node.js",
+    "LMOS",
+    "Leismore OpenSource",
+    "Leismore",
+    "Node.js",
+    "NodeJS",
+    "Node"
+  ],
+  "homepage": "https://github.com/leismore/lmos-nodejs-unicode-print-chars#readme",
+  "bugs": {
+    "url": "https://github.com/leismore/lmos-nodejs-unicode-print-chars/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leismore/lmos-nodejs-unicode-print-chars.git"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/leismore"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Kyle Chinn",
+    "url": "https://kyle.chinn.leismore.org",
+    "email": "kyle.chinn@leismore.co"
+  },
+  "type": "module",
+  "types": "dist/src/index.d.ts",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "test": "tsx test/test.ts",
+    "build": "tsc",
+    "start": "cd dist/src && node index.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
