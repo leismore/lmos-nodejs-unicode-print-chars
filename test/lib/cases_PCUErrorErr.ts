@@ -13,4 +13,11 @@ const VALID = [
     ERR_VALID
 ];
 
-export { VALID };
+const ALL = [
+    ERR_VALID
+];
+
+export {
+	ERR_VALID,
+	VALID, ALL
+};

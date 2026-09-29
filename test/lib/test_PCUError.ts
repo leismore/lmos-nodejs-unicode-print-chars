@@ -11,47 +11,35 @@
 import test   from 'node:test';
 import assert from 'node:assert/strict';
 
-import { PCUError             } from '../../src/index.js';
-import { VALID as ERR_VALID   } from './cases_PCUErrorErr.js';
-import { VALID as ERROR_VALID } from './cases_Error.js';
+import { PCUError    } from '../../src/index.js';
+import { ERR_VALID   } from './cases_PCUErrorErr.js';
+import { ERROR_VALID } from './cases_Error.js';
 
 const CLASS_NAME = 'PCUError';
 
 function test_PCUError() {
 
     // Without a previous error
-    for (const err of ERR_VALID) {
+    test('PCUError w/o previous', () => {
 
-        test(`PCUError w/o previous - ${err.code}`, () => {
+        const error = new PCUError(ERR_VALID);
 
-            const error = new PCUError(err);
+        assert.strictEqual(error.name, CLASS_NAME,
+            `Error Name - Expected: ${CLASS_NAME} / Actual: ${error.name}`
+        );
 
-            assert.strictEqual(error.name, CLASS_NAME,
-                `Error Name - Expected: ${CLASS_NAME} / Actual: ${error.name}`
-            );
-
-        });
-
-    }
+    });
 
     // With a previous error
-    for (const err of ERR_VALID) {
-
-        for (const prev of ERROR_VALID) {
-
-            test(`PCUError w/ previous - ${err.code}, previous: ${prev.message}`, () => {
+    test('PCUError w/ previous', () => {
                 
-                const error = new PCUError(err, prev);
+        const error = new PCUError(ERR_VALID, ERROR_VALID);
 
-                assert.strictEqual(error.name, CLASS_NAME,
-                    `Error Name - Expected: ${CLASS_NAME} / Actual: ${error.name}`
-                );
+        assert.strictEqual(error.name, CLASS_NAME,
+            `Error Name - Expected: ${CLASS_NAME} / Actual: ${error.name}`
+        );
 
-            });
-
-        }
-
-    }
+    });
 
 }
 

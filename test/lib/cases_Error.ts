@@ -8,4 +8,11 @@ const VALID = [
     ERROR_VALID
 ];
 
-export { VALID };
+const ALL = [
+    ERROR_VALID
+];
+
+export {
+    ERROR_VALID,
+    VALID, ALL
+};
