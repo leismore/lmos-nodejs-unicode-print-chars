@@ -19,25 +19,29 @@ const CLASS_NAME = 'PCUError';
 
 function test_PCUError() {
 
-    // Without a previous error
-    test('PCUError w/o previous', () => {
+    test('TESTING PCUError', async t => {
 
-        const error = new PCUError(ERR_VALID);
+        // Without a previous error
+        await t.test('PCUError w/o previous', () => {
 
-        assert.strictEqual(error.name, CLASS_NAME,
-            `Error Name - Expected: ${CLASS_NAME} / Actual: ${error.name}`
-        );
+            const error = new PCUError(ERR_VALID);
 
-    });
+            assert.strictEqual(error.name, CLASS_NAME,
+                `Error Name - Expected: ${CLASS_NAME} / Actual: ${error.name}`
+            );
 
-    // With a previous error
-    test('PCUError w/ previous', () => {
+        });
+
+        // With a previous error
+        await t.test('PCUError w/ previous', () => {
                 
-        const error = new PCUError(ERR_VALID, ERROR_VALID);
+            const error = new PCUError(ERR_VALID, ERROR_VALID);
 
-        assert.strictEqual(error.name, CLASS_NAME,
-            `Error Name - Expected: ${CLASS_NAME} / Actual: ${error.name}`
-        );
+            assert.strictEqual(error.name, CLASS_NAME,
+                `Error Name - Expected: ${CLASS_NAME} / Actual: ${error.name}`
+            );
+
+        });
 
     });
 

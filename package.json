@@ -42,6 +42,7 @@
     "prepublishOnly": "npm run build && npm run test"
   },
   "devDependencies": {
+    "@leismore/lmos-nodejs-primitives": "^1.2.4",
     "@types/node": "^24.19.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
